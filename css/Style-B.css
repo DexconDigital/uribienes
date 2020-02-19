@@ -1,0 +1,58 @@
+
+.header{
+    position: fixed !important;
+    z-index: 100 !important;
+    width: 100%;
+}
+
+.nivo-main-image{
+
+    margin-top: 92px !important;
+
+}
+
+.textContent{
+
+    margin-top: 92px !important;
+
+}
+
+.title-1 .title-2 {
+
+    color: black !important;
+
+}
+
+.icon-fa a{
+
+    margin: 0 10px 0 0;
+    text-decoration: none;
+
+}
+
+.icon-fa {
+
+    box-sizing: inherit;
+    display: block;
+    color: #fff;
+
+}
+
+.icon-fa i{
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: all .15s linear;
+    width: 40px;
+}
+
+.icon-fa i:hover{
+
+    background-color: #fedb3c;
+    color: white;
+
+}

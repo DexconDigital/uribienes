@@ -1,0 +1,24 @@
+
+.header{
+    position: fixed !important;
+    z-index: 100 !important;
+    width: 100%;
+}
+
+.nivo-main-image{
+
+    margin-top: 92px !important;
+
+}
+
+.textContent{
+
+    margin-top: 92px !important;
+
+}
+
+.title-1 .title-2 {
+
+    color: black !important;
+
+}
