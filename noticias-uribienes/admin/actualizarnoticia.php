@@ -59,11 +59,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    <li class="dropdown">
 	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
                     <?php
-                        $user="admin";
+                        $user=$_SESSION["usuarioactual"];
                         $con=Conect();
                         $qry="SELECT * FROM usuarios where usuario ='$user'";
-                        $sql=mysqli_query($con,$qry);
-                        $res=  mysqli_fetch_array($sql) ;                            
+                        $result = $con->prepare( $qry );
+                        $result->execute();
+                        $res= $result->fetch();                            
                     ?>
                     <img src="<?php echo $res[7]; ?>">         
                     </a>
@@ -101,11 +102,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- /.navbar-static-side -->
         </nav>
         <?php
+            $id_inmobiliaria = $res[8];
             $id=$_GET["id"];
             $con=Conect();
-            $qry="SELECT * FROM noticias where id ='$id'";
-            $sql=mysqli_query($con,$qry);
-            $res=  mysqli_fetch_array($sql) ;                            
+            $qry="SELECT * FROM noticias where id ='$id' and id_inmobiliaria2 = {$id_inmobiliaria}";
+            $result = $con->prepare( $qry );
+            $result->execute();
+            $res= $result->fetch();       
         ?>
         <div id="page-wrapper">
         <div class="col-md-12 graphs">
@@ -133,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="form-group">
                         <label for="noticia" class="col-sm-2 control-label">Noticia</label>
                         <div class="col-sm-8">
-                            <textarea name="noticia"  id="noticia"><?php echo $res[4]; ?></textarea>
+                            <textarea name="noticia"  id="noticia"><?php echo $res[5]; ?></textarea>
                         </div>
                     </div>
                     <div class="bs-example" data-example-id="form-validation-states">
@@ -156,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-
+                    </div>
                 </form>
             </div>
         </div>  

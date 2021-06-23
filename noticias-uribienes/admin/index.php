@@ -58,8 +58,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         $user= $_SESSION["usuarioactual"] ;
                         $con=Conect();
                         $qry="SELECT * FROM usuarios where usuario ='$user'";
-                        $sql=mysqli_query($con,$qry);
-                        $res=  mysqli_fetch_array($sql) ;                            
+                        $result = $con->prepare( $qry );
+                        $result->execute();
+                        $res= $result->fetch();                            
                     ?>
                     <img src="<?php echo $res[7]; ?>">
                     </a>
