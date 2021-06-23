@@ -1,4 +1,5 @@
 <?php
+
 require_once 'conexion.php';
 
 $nombre = $_REQUEST["titulo"];
@@ -13,8 +14,10 @@ $destino = "fotos/".$nombre_foto;
 $con = Conect();
 copy( $ruta, $destino );
 
-$sql = ( "insert into noticias (nombre,descripcion,imagen,noticia,fecha,id_inmobiliaria2) values('$nombre','$descripcion','$destino','$noticia','$fecha','19')" );
+$sql = ( "insert into noticias (nombre,descripcion,archivo,imagen,noticia,fecha,id_inmobiliaria2) values('$nombre','$descripcion','','$destino','$noticia','$fecha','19')" );
+
 $result = $con->prepare( $sql );
 $result->execute();
+
 header( "Location: noticias.php" );
 ?>
