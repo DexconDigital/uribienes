@@ -503,6 +503,12 @@ div.style-customizer .color-11 {
     background-image: url("https://devitems.com/html/haven-preview/haven/img/main-bg-0.jpg");
 }
 
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 @media( max-width:992px) {
     
     .boxed-layout .page-wrapper {
