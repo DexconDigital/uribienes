@@ -1,6 +1,5 @@
 $.ajax({
     url: 'notices/noticesJSON.php',
-    type:"GET",
     dataType: "json",
     success: function(data) {
         console.log(data)
@@ -20,8 +19,8 @@ $.ajax({
                                 '</div>'+
                             '</div>'+
                             '<div class="blog-desc">'+
-                                '<h6><a href="detalle_noticia.php?id='+data[i].id+'">'+data[i].titulo+'</a></h6>'+
-                                '<p class="post-content">'+data[i].descripcion+'</p>'+
+                                '<h6 class="text-truncate"><a href="detalle_noticia.php?id='+data[i].id+'">'+data[i].titulo+'</a></h6>'+
+                                '<p class="post-content text-truncate">'+data[i].descripcion+'</p>'+
                                 '<div class="bolg-continue">'+
                                     '<a href="detalle_noticia.php?id='+data[i].id+'">Leer más  &gt;</a>'+
                                 '</div>'+
