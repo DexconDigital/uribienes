@@ -7,10 +7,13 @@ $nombre = $_POST["user"];
 $password = $_POST["pass"];
 
 $qry = "SELECT usuario FROM usuarios WHERE usuario ='$nombre' and password ='$password' ";
-$sql = mysqli_query($con, $qry);
+$result = $con->prepare( $qry );
+$result->execute();
 
-$row = mysqli_fetch_row($sql);
-if (mysqli_num_rows($sql) > 0) {
+$row = $result->fetch();
+$rowcount = $result->rowCount();
+
+if ( $rowcount > 0 ) {
     // output data of each row
     session_start();
     //Guardamos dos variables de sesión que nos auxiliará para saber si se está o no "logueado" un usuario
